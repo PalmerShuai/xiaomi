@@ -3,7 +3,7 @@
 <div id='mine'>
 <div class='heade'>
 <img src="../../assets/logopeo.png">
-<p><span>登录</span>/<span>注册</span></p>
+<p><span @click='login'>登录</span>/<span @click='res'>注册</span></p>
 </div>
 <van-cell is-link title="我的订单"  />
 <div class="thing">
@@ -68,7 +68,16 @@ computed: {},
 watch: {},
 //方法集合
 methods: {
-
+login(){
+    this.$router.push({
+        path:'login'
+    })
+},
+res(){
+     this.$router.push({
+        path:'registered'
+    })
+}
 },
 //生命周期 - 创建完成（可以访问当前this实例）
 created() {

@@ -1,21 +1,17 @@
 <!--  -->
 <template>
-<div id='footer'>
-<ul>
-    <router-link tag='li' to='/index'>
-    <span class="iconfont icon-shouye"></span>
-    <p>首页</p>
-    </router-link>
-    <router-link tag='li' to='/kind'>
-     <span class="iconfont icon-fenlei"></span>
-    <p>分类</p></router-link>
-    <router-link tag='li' to='/car'>
-     <span class="iconfont icon-gouwucheman"></span>
-    <p>购物车</p></router-link>
-    <router-link tag='li' to='/mine'>
-     <span class="iconfont icon-wode"></span>
-    <p>我的</p></router-link>
-</ul>
+<div id='login'>
+<van-nav-bar title="登录" left-text="返回" left-arrow @click.native="goback">
+ </van-nav-bar>
+ <div class="date">
+ <span>用户名:</span>
+ <input type="text">
+ </div>
+  <div class="date">
+ <span>密   码:</span>
+ <input type="text">
+ </div>
+ <button class="log">登录</button>
 </div>
 </template>
 
@@ -29,7 +25,7 @@ components: {},
 data() {
 //这里存放数据
 return {
-
+ 
 };
 },
 //监听属性 类似于data概念
@@ -38,7 +34,9 @@ computed: {},
 watch: {},
 //方法集合
 methods: {
-
+goback(){
+   this.$router.go(-1)
+}
 },
 //生命周期 - 创建完成（可以访问当前this实例）
 created() {
@@ -58,11 +56,30 @@ activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
 }
 </script>
 <style scoped >
-#footer{ width:100%; height:50px; background: white; border-top:2px #ebe8e3 solid; position: fixed; left: 0; bottom:0;}
-#footer ul{ display: flex; text-align: center; height:50px; align-items:center;}
-#footer ul li{ flex:1; height:40px;}
-#footer ul li.active{ color: #f03d37;}
-#footer ul span{ font-size: 20px;}
-#footer ul p{ font-size: 12px; line-height: 18px;}
-
+#login .date{
+  width:80%;
+  height:50px;
+  margin:50px auto;
+  
+}
+#login .date span{
+  height:40px;
+  line-height: 40px;
+  float:left;
+  font-size: 18px;
+}
+#login .date input{
+  width:75%;
+  height:40px;
+  float:right;
+  border:1px solid #cecece
+}
+#login .log{
+  display:block;
+  width:40%;
+  height:50px;
+  border:1px solid #cecece;
+  margin: 0 auto;
+  font-size:25px;
+}
 </style>

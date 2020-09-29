@@ -1,11 +1,14 @@
 <!--  -->
 <template>
   <div id="car">
-    <mt-header fixed title="购物车">
-      <router-link to="/" slot="left">
-        <mt-button icon="back"></mt-button>
-      </router-link>
-    </mt-header>
+  <div class="heade">
+   <van-nav-bar title="购物车" left-text="返回" left-arrow fixed @click.native="goback">
+  <template #right>
+    <van-icon name="search" size="18" />
+  </template>
+</van-nav-bar>
+  </div>
+  
    <div class='outer'>
      <div class="noth">
      <img src="../../assets/下载.png">
@@ -59,6 +62,14 @@
    
    </ul>
    </div>
+   <div class="boot">
+   <div class='left'>
+   <p>共1件 金额</p>
+   <span>49</span>
+   </div>
+   <div class='center'><span>继续购物</span></div>
+   <div class='right'><span>去付款</span></div>
+   </div>
   </div>
 </template>
 
@@ -78,7 +89,12 @@ export default {
   //监控data中的数据变化
   watch: {},
   //方法集合
-  methods: {},
+  methods: {
+goback(){
+    console.log(111)
+    this.$router.go(-1)
+      }
+  },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
@@ -94,7 +110,8 @@ export default {
 </script>
 <style scoped >
 #car .outer{
-margin-top:40px
+    margin-top:50px;
+   
 }
 #car .outer .noth{
     height:90px;
@@ -172,5 +189,37 @@ width:48%;
 }
 #car  .list ul li .pric{
     color:orangered
+}
+#car .boot{
+   width:100%;
+    height:60px;
+    
+    position: fixed;
+    bottom:0;
+    background:white;
+}
+#car .boot div{
+    text-align: center;;
+    height:60px;
+    width:33%;
+    float:left
+}
+#car .boot .left{
+    line-height: 20px;;
+}
+#car .boot .left p{
+margin-top:20px;
+}
+#car .boot .left span{
+    color:orangered
+}
+#car .boot .center{
+    line-height: 60px;
+}
+#car .boot .right{
+background:orangered;
+line-height: 60px;
+color:white;
+font-size: 700;
 }
 </style>

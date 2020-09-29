@@ -90,6 +90,13 @@
       "unicode_decimal": 58908
     },
     {
+      "icon_id": "7524658",
+      "name": "左箭头",
+      "font_class": "zuojiantou",
+      "unicode": "e771",
+      "unicode_decimal": 59249
+    },
+    {
       "icon_id": "9452192",
       "name": "待收货",
       "font_class": "daishouhuo-",

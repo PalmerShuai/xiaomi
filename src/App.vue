@@ -1,7 +1,9 @@
 <template>
   <div id="app">
   <router-view></router-view>
+  <div v-if="$route.meta.keepAlive">
    <Footer></Footer>
+   </div>
   </div>
 </template>
 
